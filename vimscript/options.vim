@@ -6,6 +6,7 @@
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
+set clipboard=unnamedplus
 set mouse=a " allow mouse
 set termguicolors
 colorscheme gruvbox " TODO add some check in case gruvbox not installed

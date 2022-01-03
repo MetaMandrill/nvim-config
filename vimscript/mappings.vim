@@ -6,17 +6,25 @@
 let mapleader = " "
 
 inoremap jk <ESC>
-map <leader><leader> :nohlsearch<CR>
 
 " search for highlighted text
 "vnoremap // y/<C-R>"<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" add undo breakpoints
+inoremap , ,<C-g>U
+inoremap . .<C-g>U
+inoremap ! !<C-g>U
+inoremap ? ?<C-g>U
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " moving between buffers
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader><leader> :nohlsearch<CR>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -30,7 +38,7 @@ nmap <S-l> :bnext<CR>
 nmap <S-h> :bprevious<CR>
 
 " kill buffer, keep window
-map <leader>bk :bp<bar>sp<bar>bn<bar>bd<CR>
+" map <leader>bk :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "tabs
 " nnoremap <leader>tt :tabnew<CR>
@@ -48,14 +56,37 @@ map B ^
 map E $
 
 " j/k will move virtual lines (lines that wrap)
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+" noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-" Move text up and down
-nnoremap <A-j> <Esc>:m .+1<CR>==gi
-nnoremap <A-k> <Esc>:m .-2<CR>==gi
+" add relative jumps to jumplist
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : "") . 'j'
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : "") . 'k'
 
+" keep screen centred and folds open when jumping to next
+nnoremap n nzzzV
+nnoremap N NzzzV
 
+" fuzzy search in buffer
+nmap <C-s> :Telescope current_buffer_fuzzy_find theme=ivy <CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Manipulating lines
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Y yanks to end of line, like C and D
+nnoremap Y y$
+
+" Move text up and down in every node
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+
+" toggle fold
 nnoremap <space><space> za
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -65,7 +96,7 @@ nnoremap <space><space> za
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "actually escape term mode
 " tnoremap <Esc> <C-\><C-n>
-tnoremap jk <C-\><C-n>
+tnoremap <C-c> <C-\><C-n>
 
 
 tnoremap <C-h> <C-\><C-N><C-w>h
@@ -86,5 +117,6 @@ tnoremap <C-l> <C-\><C-N><C-w>l
 " nnoremap <A-j> <C-w>j
 " nnoremap <A-k> <C-w>k
 " nnoremap <A-l> <C-w>l
+
 
 
