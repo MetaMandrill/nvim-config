@@ -68,7 +68,7 @@ nnoremap n nzzzV
 nnoremap N NzzzV
 
 " fuzzy search in buffer
-nmap <C-s> :Telescope current_buffer_fuzzy_find theme=ivy <CR>
+nnoremap <C-s> :Telescope current_buffer_fuzzy_find theme=ivy<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "

@@ -11,6 +11,8 @@ set mouse=a " allow mouse
 set termguicolors
 colorscheme gruvbox " TODO add some check in case gruvbox not installed
 
+set cursorline
+
 " but the config in my path so I can :find it
 set path+=~/.config/nvim/
 

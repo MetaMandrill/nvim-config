@@ -26,7 +26,7 @@ startify.section.top_buttons.val = {
 -- startify.section.mru_cwd.val = { { type = "padding", val = 0 } }
 
 -- disable nvim_web_devicons
-startify.nvim_web_devicons.enabled = false
+-- startify.nvim_web_devicons.enabled = false
 -- startify.nvim_web_devicons.highlight = false
 -- startify.nvim_web_devicons.highlight = 'Keyword'
 --

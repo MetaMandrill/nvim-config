@@ -91,7 +91,7 @@ local mappings = {
   },
 
   c = {name = "Config",
-      e = {"<cmd>e ~/. = auto()onfig/nvim/init.vim<CR>", "edit config"},
+      e = {"<cmd>e ~/.config/nvim/init.vim<CR>", "edit config"},
 
   },
 
@@ -104,7 +104,7 @@ local mappings = {
         "Find file",
     },
     w = {
-        "<cmd>vs<CR><cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+        "< = auto()md>vs<CR><cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Find file new windows",
     },
   },
@@ -180,15 +180,15 @@ local mappings = {
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    c = { "<cmd>Telescope commands<cr>", "Commands" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    p = { "<cmd>Telescope live_grep theme=ivy expand(\"<cword>\")<CR>", "Search Text at point" },
+    p = { "<cmd>Telescope grep_string theme=ivy<cr>", "Search Text at point" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
-    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Search Text" },
+    s = { "<cmd>Telescope git_files theme=ivy<cr>", "Search Text" },
+    S = { "<cmd>Telescope live_grep theme=ivy<cr>", "Search Text" },
   },
 
   t = {
